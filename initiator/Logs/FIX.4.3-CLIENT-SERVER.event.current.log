@@ -11,3 +11,55 @@
 20251128-17:59:03.000000000 : Initiated logon request
 20251128-17:59:03.000000000 : Logon contains ResetSeqNumFlag=Y, reseting sequence numbers to 1
 20251128-17:59:03.000000000 : Received logon response
+20251128-20:34:09.000000000 : Created session
+20251128-20:34:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-20:34:09.000000000 : Initiated logon request
+20251128-20:34:09.000000000 : Logon contains ResetSeqNumFlag=Y, reseting sequence numbers to 1
+20251128-20:34:09.000000000 : Received logon response
+20251128-20:55:19.000000000 : Socket Error: An existing connection was forcibly closed by the remote host.
+
+20251128-20:55:19.000000000 : Disconnecting
+20251128-20:56:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-20:56:11.000000000 : Disconnecting
+20251128-20:57:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-20:57:11.000000000 : Disconnecting
+20251128-20:58:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-20:58:11.000000000 : Disconnecting
+20251128-20:59:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-20:59:11.000000000 : Disconnecting
+20251128-21:00:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-21:00:11.000000000 : Disconnecting
+20251128-21:01:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-21:01:11.000000000 : Disconnecting
+20251128-21:02:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-21:02:11.000000000 : Disconnecting
+20251128-21:03:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-21:03:11.000000000 : Disconnecting
+20251128-21:04:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-21:04:11.000000000 : Disconnecting
+20251128-21:05:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-21:05:11.000000000 : Disconnecting
+20251128-21:06:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-21:06:11.000000000 : Disconnecting
+20251128-21:07:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-21:07:11.000000000 : Disconnecting
+20251128-21:08:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-21:08:12.000000000 : Disconnecting
+20251128-21:09:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-21:09:11.000000000 : Disconnecting
+20251128-21:10:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-21:10:11.000000000 : Disconnecting
+20251128-21:11:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-21:11:11.000000000 : Disconnecting
+20251128-21:12:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-21:12:11.000000000 : Disconnecting
+20251128-21:13:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-21:13:11.000000000 : Disconnecting
+20251128-21:14:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-21:14:11.000000000 : Disconnecting
+20251128-21:15:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-21:15:11.000000000 : Disconnecting
+20251128-21:16:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-21:16:11.000000000 : Disconnecting
+20251128-21:17:09.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-21:17:11.000000000 : Disconnecting

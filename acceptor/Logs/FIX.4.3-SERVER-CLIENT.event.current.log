@@ -6,3 +6,7 @@
 20251128-17:59:03.000000000 : Responding to logon request
 20251128-20:30:17.000000000 : Socket Error: Connection reset by peer.
 20251128-20:30:17.000000000 : Disconnecting
+20251128-20:34:04.000000000 : Created session
+20251128-20:34:09.000000000 : Logon contains ResetSeqNumFlag=Y, reseting sequence numbers to 1
+20251128-20:34:09.000000000 : Received logon request
+20251128-20:34:09.000000000 : Responding to logon request
