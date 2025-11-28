@@ -1,0 +1,13 @@
+20251128-07:21:56.000000000 : Created session
+20251128-07:21:56.000000000 : Connecting to acceptor on port 3000 (Source :0)
+20251128-17:44:47.000000000 : Created session
+20251128-17:44:47.000000000 : Connecting to acceptor on port 3000 (Source :0)
+20251128-17:46:50.000000000 : Created session
+20251128-17:46:50.000000000 : Connecting to acceptor on port 3000 (Source :0)
+20251128-17:52:50.000000000 : Created session
+20251128-17:52:50.000000000 : Connecting to acceptor on port 3000 (Source :0)
+20251128-17:59:03.000000000 : Created session
+20251128-17:59:03.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251128-17:59:03.000000000 : Initiated logon request
+20251128-17:59:03.000000000 : Logon contains ResetSeqNumFlag=Y, reseting sequence numbers to 1
+20251128-17:59:03.000000000 : Received logon response
