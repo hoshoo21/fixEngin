@@ -7,7 +7,7 @@ const OrderForm = () => {
         symbol: '',
         quantity: '',
         price: '',
-        ordertype: 'MARKET',
+        ordertype: 'LIMIT',
         tif: 'DAY',
         notes: '',
    });
