@@ -6,7 +6,7 @@ import quickfix as fix
 import time
 import logging
 from datetime import datetime
-from model.logger import setup_logger
+from initiator.model.logger import setup_logger
 __SOH__ = chr(1)
 
 # Logger
@@ -58,6 +58,63 @@ class Application(fix.Application):
         self.ClOrdID += 1
         return str(self.ClOrdID).zfill(5)
 
+    def send_order(self,order:dict):
+        message = fix.Message()
+        header = message.getHeader()
+        header.setField(fix.MsgType(fix.MsgType_NewOrderSingle))  # 35=D
+
+        message.setField(fix.ClOrdID(self.genClOrdID()))  # 11
+
+        # Side
+        side_map = {'BUY': fix.Side_BUY, 'SELL': fix.Side_SELL}
+        print (side_map.get(order.get('side', 'BUY')))
+        message.setField(fix.Side(side_map.get(order.get('side', 'BUY'))))  # 54
+
+        # Symbol
+        message.setField(fix.Symbol(order.get('symbol', 'MSFT')))  # 55
+
+        # Quantity
+        message.setField(fix.OrderQty(order.get('quantity', 1)))  # 38
+        ord_type_map = {
+            'MARKET': fix.OrdType_MARKET,
+            'LIMIT': fix.OrdType_LIMIT,
+            'STOP': fix.OrdType_STOP
+        }
+        
+        ord_type = order['ordertype']
+        message.setField(fix.OrdType(ord_type_map[ord_type]))
+        print (ord_type)
+        # Price
+        if ord_type=="LIMIT":
+            message.setField(fix.Price(order.get('price', 0.0)))  # 44
+
+        # Order Type
+        
+        message.setField(fix.OrdType(ord_type_map.get(order.get('ordertype', 'LIMIT'))))  # 40
+
+        # Handling instruction
+        message.setField(fix.HandlInst(fix.HandlInst_MANUAL_ORDER_BEST_EXECUTION))  # 21
+
+        # Time in force
+        tif_map = {'DAY': '0', 'GTC': '1', 'IOC': '3'}
+        print(tif_map.get(order.get('tif', 'DAY')))
+        message.setField(fix.TimeInForce(tif_map.get(order.get('tif', 'DAY'))))  # 59
+    
+        # Notes / text
+        print (order.get('notes','NewOrderSingle'))
+        raw_notes = order.get('notes', 'NewOrderSingle')
+        clean_notes = ''.join(c for c in raw_notes.strip()[:255] if 32 <= ord(c) <= 126)
+        #message.setField(fix.Text('NewOrderSingle'))  # 58
+
+        # Transaction time
+        trstime = fix.TransactTime()
+        trstime.setString(datetime.now().strftime("%Y%m%d-%H:%M:%S.%f")[:-3])
+        message.setField(trstime)
+
+        # Send message
+        fix.Session.sendToTarget(message, self.sessionID)
+       
+       
     def put_new_order(self):
         """Request sample new order single"""
         message = fix.Message()

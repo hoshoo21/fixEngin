@@ -7,6 +7,7 @@ import { apiClient } from './apiClient';
  */
 export const placeOrder = async (orderData) => {
   try {
+    console.log(orderData);
     // Assuming your Python/FIX server has a route like /orders
     const result = await apiClient.post('/orders', orderData);
     return result;

@@ -1,0 +1,92 @@
+20251129-01:23:25.000000000 : Created session
+20251129-01:23:25.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251129-01:23:28.000000000 : Disconnecting
+20251129-01:24:26.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251129-01:24:28.000000000 : Disconnecting
+20251129-01:25:26.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251129-01:25:28.000000000 : Disconnecting
+20251129-01:26:19.000000000 : Created session
+20251129-01:26:19.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251129-01:26:19.000000000 : Initiated logon request
+20251129-01:26:19.000000000 : Logon contains ResetSeqNumFlag=Y, reseting sequence numbers to 1
+20251129-01:26:19.000000000 : Received logon response
+20251129-01:33:01.000000000 : Created session
+20251129-01:33:01.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251129-01:33:01.000000000 : Initiated logon request
+20251129-01:33:01.000000000 : Logon contains ResetSeqNumFlag=Y, reseting sequence numbers to 1
+20251129-01:33:01.000000000 : Received logon response
+20251129-01:51:15.000000000 : Created session
+20251129-01:51:15.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251129-01:51:15.000000000 : Initiated logon request
+20251129-01:51:15.000000000 : Logon contains ResetSeqNumFlag=Y, reseting sequence numbers to 1
+20251129-01:51:16.000000000 : Received logon response
+20251129-02:00:46.000000000 : Created session
+20251129-02:00:46.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251129-02:00:46.000000000 : Initiated logon request
+20251129-02:00:46.000000000 : Logon contains ResetSeqNumFlag=Y, reseting sequence numbers to 1
+20251129-02:00:46.000000000 : Received logon response
+20251129-02:04:40.000000000 : Created session
+20251129-02:04:40.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251129-02:04:40.000000000 : Initiated logon request
+20251129-02:04:40.000000000 : Logon contains ResetSeqNumFlag=Y, reseting sequence numbers to 1
+20251129-02:04:40.000000000 : Received logon response
+20251129-02:07:10.000000000 : Socket Error: An operation was attempted on something that is not a socket.
+
+20251129-02:07:20.000000000 : Created session
+20251129-02:07:20.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251129-02:07:20.000000000 : Initiated logon request
+20251129-02:07:20.000000000 : Logon contains ResetSeqNumFlag=Y, reseting sequence numbers to 1
+20251129-02:07:20.000000000 : Received logon response
+20251129-02:18:45.000000000 : Created session
+20251129-02:18:45.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251129-02:18:45.000000000 : Initiated logon request
+20251129-02:18:45.000000000 : Logon contains ResetSeqNumFlag=Y, reseting sequence numbers to 1
+20251129-02:18:45.000000000 : Received logon response
+20251129-02:19:25.000000000 : Socket Error: An operation was attempted on something that is not a socket.
+
+20251129-02:19:29.000000000 : Created session
+20251129-02:19:29.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251129-02:19:29.000000000 : Initiated logon request
+20251129-02:19:29.000000000 : Logon contains ResetSeqNumFlag=Y, reseting sequence numbers to 1
+20251129-02:19:29.000000000 : Received logon response
+20251129-02:28:43.000000000 : Created session
+20251129-02:28:43.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251129-02:28:43.000000000 : Initiated logon request
+20251129-02:28:43.000000000 : Logon contains ResetSeqNumFlag=Y, reseting sequence numbers to 1
+20251129-02:28:43.000000000 : Received logon response
+20251129-02:30:54.000000000 : Created session
+20251129-02:30:54.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251129-02:30:54.000000000 : Initiated logon request
+20251129-02:30:54.000000000 : Logon contains ResetSeqNumFlag=Y, reseting sequence numbers to 1
+20251129-02:30:54.000000000 : Received logon response
+20251129-02:36:43.000000000 : Created session
+20251129-02:36:43.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251129-02:36:43.000000000 : Initiated logon request
+20251129-02:36:43.000000000 : Logon contains ResetSeqNumFlag=Y, reseting sequence numbers to 1
+20251129-02:36:43.000000000 : Received logon response
+20251129-02:37:27.000000000 : Created session
+20251129-02:37:27.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251129-02:37:27.000000000 : Initiated logon request
+20251129-02:37:27.000000000 : Logon contains ResetSeqNumFlag=Y, reseting sequence numbers to 1
+20251129-02:37:27.000000000 : Received logon response
+20251129-02:44:00.000000000 : Socket Error: An existing connection was forcibly closed by the remote host.
+
+20251129-02:44:00.000000000 : Disconnecting
+20251129-02:44:16.000000000 : Created session
+20251129-02:44:16.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251129-02:44:16.000000000 : Initiated logon request
+20251129-02:44:16.000000000 : Logon contains ResetSeqNumFlag=Y, reseting sequence numbers to 1
+20251129-02:44:16.000000000 : Received logon response
+20251129-02:45:45.000000000 : Created session
+20251129-02:45:45.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251129-02:45:45.000000000 : Initiated logon request
+20251129-02:45:45.000000000 : Logon contains ResetSeqNumFlag=Y, reseting sequence numbers to 1
+20251129-02:45:45.000000000 : Received logon response
+20251129-02:45:52.000000000 : Socket Error: An existing connection was forcibly closed by the remote host.
+
+20251129-02:45:52.000000000 : Disconnecting
+20251129-02:46:03.000000000 : Created session
+20251129-02:46:03.000000000 : Connecting to 127.0.0.1 on port 3000 (Source :0)
+20251129-02:46:03.000000000 : Initiated logon request
+20251129-02:46:03.000000000 : Logon contains ResetSeqNumFlag=Y, reseting sequence numbers to 1
+20251129-02:46:03.000000000 : Received logon response
