@@ -1,23 +1,22 @@
-#!/usr/bin/python
-# -*- coding: utf8 -*-
-"""FIX Application"""
+from dataclasses import asdict
 import sys
 import quickfix as fix
 import time
 import logging
 from datetime import datetime
-from model.logger import setup_logger
-__SOH__ = chr(1)
+from initiator.model.logger import setup_logger
+from order_manager.types import OrderRequest
 
+__SOH__ = chr(1)
 # Logger
 setup_logger('initiator', 'Logs/initiator-message.log')
 logfix = logging.getLogger('initiator')
-
-
 class Application(fix.Application):
-    """FIX Application"""
     ClOrdID = 0
-
+    def __init__(self, on_exec_report_callback=None):
+        
+        super().__init__()
+        #self.on_exec_report_callback = on_exec_report_callback
     def onCreate(self, sessionID):
         print("onCreate : Session (%s)" % sessionID.toString())
         return
@@ -44,52 +43,60 @@ class Application(fix.Application):
         logfix.info("(App) S >> %s" % msg)
         return
     def fromApp(self, message, sessionID):
-        msg = message.toString().replace(__SOH__, "|")
-        logfix.info("(App) R << %s" % msg)
-        self.onMessage(message, sessionID)
-        return
+        # parse header
+        msg_type = fix.MsgType()
+        message.getHeader().getField(msg_type)
+        if msg_type.getValue() == fix.MsgType_ExecutionReport:
+            report = {
+            "orderId": message.getField(fix.OrderID().getTag()),
+            "clOrdID": message.getField(fix.ClOrdID().getTag()),
+            "symbol": message.getField(fix.Symbol().getTag()),
+            "side": message.getField(fix.Side().getTag()),
+            "orderQty": message.getField(fix.OrderQty().getTag()),
+            "price": message.getField(fix.Price().getTag()),
+            "execType": message.getField(fix.ExecType().getTag()),
+            "ordStatus": message.getField(fix.OrdStatus().getTag())
+            }
+            if self.on_exec_report_call_back:
+                try:
+                    self.on_exec_report_call_back(report)
+                except Exception as e:
+                    print("Exec report callback failed:", e)
 
-    def onMessage(self, message, sessionID):
-        """Processing application message here"""
-        pass
+            self.onMessage(message, sessionID)
+            return
 
     def genClOrdID(self):
-        """Generate ClOrdID"""
         self.ClOrdID += 1
         return str(self.ClOrdID).zfill(5)
 
-    def put_new_order(self):
-        """Request sample new order single"""
-        message = fix.Message()
-        header = message.getHeader()
 
-        header.setField(fix.MsgType(fix.MsgType_NewOrderSingle)) #39 = D 
+    
+    def onMessage(self, message, sessionID):
+        print(message)
+        """Processing application message here"""
+        pass
+    def send_order(self, order_data: OrderRequest):
+        try:
+            message = fix.Message()
+            header = message.getHeader()
 
-        message.setField(fix.ClOrdID(self.genClOrdID())) #11 = Unique Sequence Number
-        message.setField(fix.Side(fix.Side_BUY)) #43 = 1 BUY 
-        message.setField(fix.Symbol("MSFT")) #55 = MSFT
-        message.setField(fix.OrderQty(10000)) #38 = 1000
-        message.setField(fix.Price(100))
-        message.setField(fix.OrdType(fix.OrdType_LIMIT)) #40=2 Limit Order 
-        message.setField(fix.HandlInst("1")) #21 = 3
-        message.setField(fix.TimeInForce('0'))
-        message.setField(fix.Text("NewOrderSingle"))
-        trstime = fix.TransactTime()
-        trstime.setString(datetime.now().strftime("%Y%m%d-%H:%M:%S.%f")[:-3])
-        message.setField(trstime)
+            header.setField(fix.MsgType(fix.MsgType_NewOrderSingle)) #39 = D 
 
-        fix.Session.sendToTarget(message, self.sessionID)
+            message.setField(fix.ClOrdID(self.genClOrdID())) #11 = Unique Sequence Number
+            message.setField(fix.Side(fix.Side_BUY)) #43 = 1 BUY 
+            message.setField(fix.Symbol("MSFT")) #55 = MSFT
+            message.setField(fix.OrderQty(10000)) #38 = 1000
+            message.setField(fix.Price(100))
+            message.setField(fix.OrdType(fix.OrdType_LIMIT)) #40=2 Limit Order 
+            message.setField(fix.HandlInst(fix.HandlInst_MANUAL_ORDER_BEST_EXECUTION)) #21 = 3
+            message.setField(fix.TimeInForce('0'))
+            #message.setField(fix.Text("NewOrderSingle"))
+            trstime = fix.TransactTime()
+            trstime.setString(datetime.now().strftime("%Y%m%d-%H:%M:%S.%f")[:-3])
+            message.setField(trstime)
 
-    def run(self):
-        """Run"""
-        while 1:
-            options = str(input("Please choose 1 for Put New Order or 2 for Exit!\n"))
-            if options == '1':
-                self.put_new_order()
-                print("Done: Put New Order\n")
-                continue
-            if  options == '2':
-                sys.exit(0)
-            else:
-                print("Valid input is 1 for order, 2 for exit\n")
-            time.sleep(2)
+            fix.Session.sendToTarget(message, self.sessionID)
+        except Exception as e:
+            print("Application Order send failed:", e)
+          
